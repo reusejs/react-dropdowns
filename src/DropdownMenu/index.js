@@ -62,7 +62,7 @@ const DropdownMenu = function ({
                     >
                       {({}) => (
                         <LinkComponent
-                          href="#"
+                          href={item.href}
                           className={classNames(
                             item.active
                               ? props.activeItemClasses ||
