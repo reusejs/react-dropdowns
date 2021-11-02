@@ -6,7 +6,19 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const DropdownMenu = function ({ label, sections, ...props }) {
+const DropdownMenu = function ({
+  label,
+  sections,
+  LinkComponent = (props) => {
+    let { href, children, ...rest } = props;
+    return (
+      <a href={href} {...rest}>
+        {children}
+      </a>
+    );
+  },
+  ...props
+}) {
   return (
     <Menu as="div" className="relative">
       <div>
@@ -49,7 +61,7 @@ const DropdownMenu = function ({ label, sections, ...props }) {
                       key={`section-${sectionIndex}-item-${itemIndex}`}
                     >
                       {({}) => (
-                        <a
+                        <LinkComponent
                           href="#"
                           className={classNames(
                             item.active
@@ -65,7 +77,7 @@ const DropdownMenu = function ({ label, sections, ...props }) {
                               <>{section.activeIcon}</>
                             )}
                           </div>
-                        </a>
+                        </LinkComponent>
                       )}
                     </Menu.Item>
                   ))}
