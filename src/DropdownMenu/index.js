@@ -22,7 +22,11 @@ const DropdownMenu = function ({
   return (
     <Menu as="div" className="relative">
       <div>
-        <Menu.Button className="flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-400 focus:ring-white dark:focus:ring-gray-900">
+        <Menu.Button
+          className={classNames(
+            props.labelClasses || "flex text-sm focus:outline-none"
+          )}
+        >
           <span className="sr-only">Open user menu</span>
           <>{label}</>
         </Menu.Button>

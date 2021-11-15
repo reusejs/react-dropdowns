@@ -21,6 +21,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   label: <Label />,
+  labelClasses: "flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-400 focus:ring-white dark:focus:ring-gray-900",
   sections: [
     {
       label: "Manage Account",
@@ -51,6 +52,7 @@ export const Dark = DarkTemplate.bind({});
 
 Dark.args = {
   label: <Label />,
+  labelClasses: "flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-400 focus:ring-white dark:focus:ring-gray-900",
   sections: [
     {
       label: "Manage Account",
