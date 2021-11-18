@@ -11,6 +11,7 @@ const DropdownMenu = function ({
   sections,
   LinkComponent = (props) => {
     let { href, children, ...rest } = props;
+
     return (
       <a href={href} {...rest}>
         {children}
@@ -74,6 +75,7 @@ const DropdownMenu = function ({
                               : "",
                             "block px-4 py-2 text-sm text-gray-700 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700"
                           )}
+                          item={item}
                         >
                           <div className="flex items-center justify-between">
                             <div>{item.label}</div>
