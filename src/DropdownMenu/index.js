@@ -43,12 +43,15 @@ const DropdownMenu = function ({
       >
         <Menu.Items
           className={classNames(
-            props.positionClasses || "origin-top-right absolute right-0",
+            props.positionClasses || "origin-top-right absolute right-0 z-10",
             "mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 dark:divide-gray-500 focus:outline-none"
           )}
         >
           {sections.map((section, sectionIndex) => (
-            <div className="py-1" key={`section-${sectionIndex}`}>
+            <div
+              className="py-1"
+              key={`${props.uniqueId}-${section}-${sectionIndex}`}
+            >
               <section>
                 <div>
                   {section.label && (
@@ -63,7 +66,7 @@ const DropdownMenu = function ({
                   )}
                   {section.items.map((item, itemIndex) => (
                     <Menu.Item
-                      key={`section-${sectionIndex}-item-${itemIndex}`}
+                      key={`${props.uniqueId}-section-${sectionIndex}-item-${itemIndex}`}
                     >
                       {({}) => (
                         <LinkComponent
